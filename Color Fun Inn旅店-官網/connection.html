@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繽紛樂旅店|COLOR FUN IN HOTEL-官方網站</title> 
+    <link rel="icon" type="icon" href="image/LOGO-02.jpg">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        h1{
+            padding: 50px 0 50px 100px;
+        }
+        .con{
+            width: 1200px;
+            height: auto;
+            background-color:rgb(255, 251, 244);
+            margin: auto;
+        }
+        .con p{
+            padding: 10px 0 10px 100px;
+        }
+        .login{
+            width: 1200px;
+            height: auto;
+            background-color:rgb(255, 251, 244);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            width: 1000px;
+        }
+        .item{
+            padding-bottom: 20px;
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 5px;
+        }
+        .la-email{
+            padding-left: 405px;
+        }
+        .ph{
+            margin-left: 405px;
+        }
+        .la-mes{
+            padding-right: 390px;
+        }
+        form .name{
+            width: 45%;
+            border: 1px solid #aaa;
+            line-height: 3;
+            border-radius: 10px;
+        }
+        form .email{
+            width: 45%;
+            border: 1px solid #aaa;
+            line-height: 3;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        form .sex{
+            width: 30px;
+            border: 1px solid #aaa;
+            line-height: 3;
+            border-radius: 10px;
+        }
+        form .phone{
+            width: 45%;
+            border: 1px solid #aaa;
+            line-height: 3;
+            border-radius: 10px;
+            margin-left: 375px;
+        }
+        form .mes{
+            width: 70%;
+            border: 1px solid #aaa;
+            line-height: 3;
+            border-radius: 10px;
+        }
+        textarea{
+            padding-left: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            resize: none;
+        }
+        form .btn{
+            width: 100px;
+            height: 40px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+            border: none;
+        }
+        .footer{
+            text-align: center;
+            background-color:black;
+            color: #ffffff;
+            padding: 10px ;
+
+        }
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -999;
+        }
+        .bg img {
+            min-height: 100%;
+            width: 100%;
+            opacity: 0.3;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h1>聯絡我們</h1>
+        <p>親愛的顧客您好：<br><br>
+        感謝您對繽紛樂旅店的支持與愛護，誠摯邀請您提供意見以及讚揚，這些將成為我們成長與提升品質的動力，在接獲您的來函後<br><br>
+        我們將盡快與您聯絡回覆。<br><br>
+        </p>
+    </div>
+
+    <div class="logo">
+        <div class="pp">
+            <a href="home.html"><img src="image/LOGO-02.jpg" height="100px" alt="繽紛樂"></a>
+         </div>
+        
+        <div class="lopic">
+            <nav>
+                <a href="room.html">房型種類/服務</a>
+                <a href="about.html">關於繽紛樂</a>
+                <a href="position.html">繽紛樂位置</a>
+                <a href="connection.html">聯絡我們/查詢</a>
+            </nav>
+       </div>
+    </div>
+
+    <div class="login">
+        <form action="connect.php" method="post" >
+            <div class="item">
+                <label for="name">姓名：</label>
+                <label class="la-email" for="Email">Email：</label><br>
+            </div>
+
+            <div class="item">
+                <input class="name" type="text" name="txtname" id="name" required/>
+                <input class="email" type="email" name="Email" id="Email" required/><br>
+            </div>
+
+            <div class="item">
+                <label for="gender">性別：</label>
+                <label class="ph" for="phone-number">電話：</label><br>
+            </div>
+
+            <div class="item">
+                <input class="sex" type="radio" name="gender" value="man" id="gender" checked required/>男
+                <input class="sex" type="radio" name="gender" value="female" id="gender" required/>女
+                <input class="phone" type="text" name="phonenumber" id="phonenumber" required/><br>
+            </div>
+
+            <div class="item">
+                <label class="la-mes" for="message">訊息：</label>
+            </div>
+            <div class="item">
+                <textarea class="mes" rows="4" cols="30" name="message" id="message" placeholder="請填寫意見..." required></textarea><br> 
+            </div>
+
+            <input type="submit" value="送出">
+        </form>
+    </div>
+
+    <div class="bg">
+        <img src="image/背景圖.jpg">
+    </div>
+
+    <div class="footer">   
+        ©Color for inn Hotel
+    </div>
+</body>
+</html>

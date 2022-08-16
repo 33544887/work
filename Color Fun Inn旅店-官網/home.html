@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)file:///C:/Users/user/Downloads/01.html -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/pepper-grinder/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="icon" type="icon" href="image/LOGO-02.jpg">
+    <link rel="stylesheet" href="style.css">
+    <title>繽紛樂旅店|COLOR FUN IN HOTEL-官方網站</title>
+
+    <style>
+    .space{padding: 20px;}
+
+    .item{
+        display: flex;
+        width: 1200px;
+        margin: auto;
+        box-shadow: 0 0 10px black;
+    }
+
+    .item .pic {width: 60%;}
+
+    .item .pic img{
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+    }
+    .item .txt {
+        display: flex;
+        flex-direction: column;
+        padding: 30PX;
+        width: 40%;
+        height: 400px;
+        background-color: #ffffff ;
+        font-weight: 500;
+    }
+
+    h2{padding: 100px 0 10px 10px;}
+
+    hr{
+        border: solid #DEDEDE 0.ch;
+        opacity: 30%;
+        width: 350px;
+        margin-left: 10px;
+    }
+    .txt-pp{
+        padding-top: 10px;
+        margin-left: 20px;
+    }
+
+    .box2{padding-top: 120px;}
+
+    .google-maps {
+        position: relative;
+        padding-bottom: 30%;
+        height: 0;
+        overflow: hidden;
+    }
+    .google-maps iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100% ;
+        height: 100% ;
+    }
+    .footer{
+        text-align: center;
+        background-color:black;
+        color: #ffffff;
+        padding: 10px ;
+    }
+    .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -999;
+    }
+    .bg img {
+        min-height: 100%;
+        width: 100%;
+        opacity: 0.3;   
+    }
+    .reservation{
+        background: #ffffff;
+        height: 100px;
+    }
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        padding: 20px;
+        font-size: 24px;
+        font-weight: 800;
+    }
+    .fbox{
+        border-right: #DEDEDE solid 0.1ch;
+        padding: 10px;
+        margin: 10px;
+    }
+    input{
+        width: 200px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+    }
+    select{
+        width: 200px;
+        font-size: 18px;
+        border: none;
+        outline: none;
+    }
+    button{
+        width: 150px;
+        height: 70px;
+        border: none;
+        font-size: 18px;
+        background-color:coral;
+        border-radius: 300px;
+        outline:none;
+        font-weight: 800;
+        transition-duration: 0.2s;
+    }
+    button:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .cc{padding-left: 20px;}
+    </style>   
+
+    <script>
+        $ (document).ready(function(){
+            var minDate = new Date();
+            $("#check-in").datepicker({
+                showAnim: 'drop',
+                numberOfMonth:1,
+                minDate: minDate,
+                dateFormat:'yy/mm/dd',
+                onClose:function(selectedDate){
+                    $("#check-out").datepicker("option","minDate",selectedDate);
+                }
+            });
+
+            $("#check-out").datepicker({
+                showAnim: 'drop',
+                numberOfMonth:1,
+                minDate: minDate,
+                dateFormat:'yy/mm/dd',
+                onClose:function(selectedDate){
+                    $("#check-in").datepicker("option","maxDate",selectedDate);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    <div class="logo">
+        <div class="pp">
+            <a href="home.html"><img src="image/LOGO-02.jpg" height="100px" alt="繽紛樂"></a>
+        </div>
+        
+        <div class="lopic">
+            <nav>
+               <a href="room.html">房型種類/服務</a>
+               <a href="about.html">關於繽紛樂</a>
+               <a href="position.html">繽紛樂位置</a>
+               <a href="connection.html">聯絡我們/查詢</a>
+            </nav>
+       </div>
+    </div>
+
+    <div class="logo-pic">
+       <img src="image/大廳3.jpg" width="100%" alt="繽紛樂">
+    </div>
+
+    <div class="reservation">
+        <form >
+            <div class="fbox">
+                <label for="check-in">訂房日期：</label><br>
+                <input type="text" id="check-in" placeholder="請選擇日期" autocomplete="off" >
+            </div>
+            <div class="fbox">
+                <label for="check-out">退房日期：</label><br>
+                <input type="text" id="check-out" placeholder="請選擇日期" autocomplete="off" >
+            </div>
+            <div class="fbox">
+                <label for="people">入住人數：</label><br>
+                <select name="people" id="people" >
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="fbox">     
+                <label for="rr">房間數：</label><br>           
+                <select name="room rum" id="rr">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="cc">
+                <button>立即訂房</button>
+            </div>           
+        </form>
+    </div>
+
+    <div class="bin">
+        <h1>繽紛樂旅店歡迎您</h1>
+    </div>
+    <!---內文-->
+    <div class="item"><!--1-->
+        <div class="pic">
+            <img src="image/入口.jpg">
+        </div>
+        <div class="txt">
+            <h2>ABOUT <br><span style="margin: 0 0 100px 60px;">COLOR FUN IN HOTEL</span> </h2>
+            <hr>
+            <p class="txt-pp">
+                繽紛樂是於西元2018年所成立的商物旅館<br><br>
+                重視的是『客人的住宿過程』<br><br>
+                提供完善的舒適環境，讓您得旅途更加美好。<br><br><br>
+                <a style="margin-left: 280px;" href="about.html" title="了解更多...">了解更多...</a>
+            </p>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="item"><!--2-->
+        <div class="txt">
+            <h2>ROOMS <br><span style="margin: 0 0 100px 60px;">& SERVICE</span> </h2>
+            <hr>
+            <p class="txt-pp">
+                以Colorful為主題，使各房型有多樣化的風格<br><br>
+                精心布置的室內擺設，打造溫馨舒適的氣氛<br><br>
+                讓您有賓至如歸的感受。<br><br>
+                <a style="margin-left: 280px;" href="room.html" title="了解更多...">了解更多...</a>
+            </p>
+        </div>
+        <div class="pic">
+            <img src="image/特色1.jpg">
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="item"><!--3-->
+        <div class="pic">
+            <img src="image/kaohsiung-1742610_1920.jpg">
+        </div>
+        <div class="txt">
+            <h2>LOCATION<br><span style="margin: 0 0 100px 60px;"></span>& SITEMAP</span> </h2>
+            <hr>
+            <p class="txt-pp">
+            本旅店位於85大樓及高雄大遠百和高雄圖書總館附近<br><br>
+            捷運三多商圈站、公車皆可到達，周遭交通便利<br><br>
+            如何詳細前往本旅店><br><br>
+            <a style="margin-left: 280px;" href="position.html".html" title="了解更多...">了解更多...</a>
+            </p>
+        </div>
+    </div>
+    <div class="space"></div>
+    <div class="item"><!--4-->
+        <div class="txt">
+            <h2>CONTACT US<br><span style="margin: 0 0 100px 60px;"></span>& QUESTION</span> </h2>
+            <hr>
+            <p class="txt-pp">
+            誠摯邀請您提供意見以及讚揚，這些將成為我們成長<br><br>
+            與提升品質的動力，在接獲您的來函後<br><br>
+            我們將盡快與您聯絡回覆。<br><br>
+            <a style="margin-left: 280px;" href="connection.html" title="了解更多...">了解更多...</a>
+            </p>
+        </div>
+        <div class="pic">
+            <img src="image/environmental-protection-4366503_1920.jpg">
+        </div>
+    </div>
+    <!---內文-->
+
+    <div class="box2">   
+        <div class="google-maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.1022408631043!2d120.29982431537168!3d22.612656937196967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e037e8c49e553%3A0x36568594515bf737!2zQ29sb3IgRnVuIGlubu-8iOe5vee0m-aoguaXheW6l--8iQ!5e0!3m2!1szh-TW!2stw!4v1600077830463!5m2!1szh-TW!2stw" width="100%" height="650" frameborder="0" style="border:1;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="footer">
+            ©Color for inn Hotel
+        </div>
+    </div>
+
+    <div class="bg">
+        <img src="image/入口1.jpg">
+    </div>
+
+
+
+
+</body>
+</html>
